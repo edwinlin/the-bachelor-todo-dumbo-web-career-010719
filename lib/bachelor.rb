@@ -14,10 +14,8 @@ def count_contestants_by_hometown(data, hometown)
   count_hash = {}
   data.each do |season, array|
     array.each do |hash|
-      hash.each do |key, value|
-        if hash["hometown"] == hometown
-          count_hash[hash] = value
-        end
+      if hash["hometown"] == hometown
+        count_hash[hash] = "instead of counter"
       end
     end
   end
@@ -28,10 +26,8 @@ end
 def get_occupation(data, hometown)
   data.each do |season, array|
     array.each do |hash|
-      hash.each do |key, value|
-        if hash["hometown"] == hometown
-          return hash["occupation"]
-        end
+      if hash["hometown"] == hometown
+        return hash["occupation"]
       end
     end
   end
